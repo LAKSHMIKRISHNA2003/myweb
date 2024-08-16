@@ -1,5 +1,42 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Congratulations! AWS DevOps Cloud Bootcamp</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
 <body>
-	<h1 style="color: green; font-size: 40px;" align="center">  GEORGE TECH APP VERSION-35,000</h1>
+    <header class="hero-section">
+        <h1>Congratulations!</h1>
+        <p>You’ve successfully completed the AWS DevOps Cloud Bootcamp.</p>
+        <p>Scroll down to view your achievements and download your certificate.</p>
+    </header>
+
+    <section class="progress-section">
+        <h2>Your Bootcamp Journey</h2>
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
+        <p class="progress-description">You’ve completed all stages of the bootcamp!</p>
+    </section>
+
+    <section class="certificate-section">
+        <h2>Your Certificate</h2>
+        <p>Click below to generate and download your personalized certificate.</p>
+        <button onclick="generateCertificate()">Generate Certificate</button>
+        <div id="certificate-container" class="certificate-container">
+            <p class="certificate-text" id="certificate-text"></p>
+            <a id="download-link" download="AWS_DevOps_Certificate.pdf">Download Certificate</a>
+        </div>
+    </section>
+
+    <footer class="footer-section">
+        <p>Stay connected and keep learning. Visit our <a href="https://yourwebsite.com">website</a> for more resources and advanced cloud courses.</p>
+    </footer>
+
+    <!-- Include jsPDF Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="scripts.js"></script>
 </body>
 </html>
