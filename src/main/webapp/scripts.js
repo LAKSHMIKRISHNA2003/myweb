@@ -16,8 +16,7 @@ demonstrating exceptional skills and dedication.`;
     const date = Date: ${new Date().toLocaleDateString()};
     const instructorText = "Instructor:";
     const instructorName = "George Yendluri";
-    const signatureText = `George Yendluri
-    VYYOMA TRAININGS`;
+    const signatureText = "VYYOMA TRAININGS";
 
     // Define margins and spacing
     const margin = 0.5; // Margin around the border
@@ -86,8 +85,8 @@ demonstrating exceptional skills and dedication.`;
 
     // Signature Line
     doc.setLineWidth(0.02);
-    doc.line(7.5, signatureY, 10, signatureY);
-    doc.setFont("Helvetica", "normal");
+    doc.line(7.5, signatureY, 9.5, signatureY);
+    doc.setFont("Helvetica", "bold");
     doc.text(signatureText, 8.5, signatureY + lineSpacing, null, null, "center");
 
     // Generate the PDF as a blob and show the download link
