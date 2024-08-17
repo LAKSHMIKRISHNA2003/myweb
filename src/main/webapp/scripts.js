@@ -11,9 +11,9 @@ function generateCertificate() {
     const subtitle = "AWS DevOps Cloud Bootcamp";
     const name = prompt("Enter your name for the certificate:") || "Student Name";
     const awardedText = "This certifies that";
-    const courseText = `has successfully completed the AWS DevOps Cloud Bootcamp, 
+    const courseText = `has successfully completed the AWS DevOps Cloud Bootcamp,
 demonstrating exceptional skills and dedication.`;
-    const date = Date: ${new Date().toLocaleDateString()};
+    const date = `Date: ${new Date().toLocaleDateString()}`;
     const instructorText = "Instructor:";
     const instructorName = "George Yendluri";
     const signatureText = "VYYOMA TRAININGS";
@@ -29,7 +29,7 @@ demonstrating exceptional skills and dedication.`;
     const dateY = courseTextY + lineSpacing * 8.7;
     const instructorY = 6.9;
     const signatureY = 7;
-  
+ 
 
     // Certificate Border
     doc.setDrawColor(0, 0, 0);
@@ -94,7 +94,7 @@ demonstrating exceptional skills and dedication.`;
     const url = URL.createObjectURL(pdfBlob);
     document.getElementById("download-link").href = url;
     document.getElementById("download-link").style.display = "inline-block";
-    
+   
     // Hide the generate button and show the download button
     document.querySelector("button").style.display = "none";
     document.getElementById("certificate-container").style.display = "block";
