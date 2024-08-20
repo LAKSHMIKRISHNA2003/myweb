@@ -6,10 +6,11 @@ function generateCertificate() {
         format: [11, 8.5]  // Standard certificate size in inches
     });
 
+    const name = document.getElementById("student-name").value || "Student Name";
+
     // Customize the certificate design
     const title = "Certificate of Completion";
     const subtitle = "AWS DevOps Cloud Bootcamp";
-    const name = prompt("Enter your name for the certificate:") || "Student Name";
     const awardedText = "This certifies that";
     const courseText = `has successfully completed the AWS DevOps Cloud Bootcamp,
 demonstrating exceptional skills and dedication.`;
@@ -29,7 +30,6 @@ demonstrating exceptional skills and dedication.`;
     const dateY = courseTextY + lineSpacing * 8.7;
     const instructorY = 6.9;
     const signatureY = 7;
- 
 
     // Certificate Border
     doc.setDrawColor(0, 0, 0);
@@ -63,9 +63,9 @@ demonstrating exceptional skills and dedication.`;
     doc.line(7.7, nameY, 3, nameY);
     doc.setFont("Helvetica", "bold");
     doc.setFontSize(24);
-    doc.text(name, 5.5, nameY, null, null, "center");
+    doc.text(name, 5.5, nameY - 0.05, null, null, "center");
 
-    // Course Description
+    // Course Completion Text
     doc.setFont("Helvetica", "normal");
     doc.setFontSize(16);
     doc.text(courseText, 5.5, courseTextY, null, null, "center");
@@ -75,7 +75,7 @@ demonstrating exceptional skills and dedication.`;
     doc.setFontSize(14);
     doc.text(date, 8.5, dateY, null, null, "center");
 
-    // Instructor Section
+    // Instructor Signature
     doc.setFont("Helvetica", "normal");
     doc.setFontSize(14);
     doc.text(instructorText, 1.5, instructorY);
@@ -83,19 +83,24 @@ demonstrating exceptional skills and dedication.`;
     doc.setFont("Helvetica", "bold");
     doc.text(instructorName, 1.5, instructorY + lineSpacing);
 
+    // Signature Placeholder
     // Signature Line
     doc.setLineWidth(0.02);
     doc.line(7.5, signatureY, 9.5, signatureY);
     doc.setFont("Helvetica", "bold");
     doc.text(signatureText, 8.5, signatureY + lineSpacing, null, null, "center");
 
-    // Generate the PDF as a blob and show the download link
-    const pdfBlob = doc.output('blob');
-    const url = URL.createObjectURL(pdfBlob);
-    document.getElementById("download-link").href = url;
-    document.getElementById("download-link").style.display = "inline-block";
-   
-    // Hide the generate button and show the download button
-    document.querySelector("button").style.display = "none";
+    const pdfData = doc.output("blob");
+    const downloadLink = document.getElementById("download-link");
+    downloadLink.href = URL.createObjectURL(pdfData);
+
+    // Display the download link
     document.getElementById("certificate-container").style.display = "block";
 }
+
+// New function to handle the click event on the download link
+document.getElementById("download-link").addEventListener("click", function() {
+    // Hide the certificate section and show the thank you message
+    document.querySelector(".certificate-section").style.display = "none";
+    document.querySelector(".thank-you-message").style.display = "block";
+});
