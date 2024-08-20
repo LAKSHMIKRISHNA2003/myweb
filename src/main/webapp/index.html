@@ -8,8 +8,15 @@
 </head>
 <body>
     <header class="hero-section">
+
+        <img src="https://trainings.vyyoma.com/wp-content/uploads/2024/01/VYYOMA-Trainings-Logo-150-x-60-px-1.png" alt="VYYOMA Logo" class="logo">
         <h1>Congratulations!</h1>
-        <p>You’ve successfully completed the AWS DevOps Cloud Bootcamp with VYYOMA Trainings.</p>
+      <br></br>
+  <div class="card">
+            <p>Your sample web page has been successfully launched using DevOps Pipeline.</p>
+        </div>
+        <p>You’ve successfully completed the "AWS DevOps Cloud Bootcamp" with VYYOMA Trainings.</p>
+      <br></br>
         <p>Scroll down to view your achievements and download your certificate.</p>
     </header>
 
@@ -24,16 +31,23 @@
     <section class="certificate-section">
         <h2>Your Certificate</h2>
         <p>Click below to generate and download your personalized certificate.</p>
+        <input type="text" id="student-name" placeholder="Enter your name here">
         <button onclick="generateCertificate()">Generate Certificate</button>
         <div id="certificate-container" class="certificate-container">
             <p class="certificate-text" id="certificate-text"></p>
             <a id="download-link" download="AWS_DevOps_Certificate.pdf">Download Certificate</a>
         </div>
     </section>
+  <!-- Thank you message -->
+    <section class="thank-you-message">
+        <p>Thank you! Please share the downloaded certificate PDF file with the instructor to receive the original certificate.</p>
+    </section>
 
     <footer class="footer-section">
-        <p>Stay connected and keep learning. Visit our <a href="https://yourwebsite.com">website</a> for more resources and advanced cloud courses.</p>
+        <p>©Vyyoma Trainings. Stay connected and keep learning. Visit our <a href="https://trainings.vyyoma.com">website</a> for more resources and advanced cloud courses.</p>
     </footer>
+
+   
 
     <!-- Include jsPDF Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
