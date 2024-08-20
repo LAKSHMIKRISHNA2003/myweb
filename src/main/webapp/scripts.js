@@ -12,7 +12,7 @@ function generateCertificate() {
     const title = "Certificate of Completion";
     const subtitle = "AWS DevOps Cloud Bootcamp";
     const awardedText = "This certifies that";
-    const courseText = `has successfully completed the AWS DevOps Cloud Bootcamp,
+    const courseText = `has successfully completed the AWS DevOps Cloud Bootcamp, 
 demonstrating exceptional skills and dedication.`;
     const date = `Date: ${new Date().toLocaleDateString()}`;
     const instructorText = "Instructor:";
